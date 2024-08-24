@@ -3,10 +3,18 @@ import PropTypes from 'prop-types';
 
 function FriendListItem({ avatar, name, isOnline }) {
   return (
-    <li className="item">
-      <span className={`status ${isOnline ? 'online' : 'offline'}`}></span>
-      <img className="avatar" src={avatar} alt={`${name} avatar`} width="48" />
-      <p className="name">{name}</p>
+    <li className="item w-full flex items-center justify-center p-4 mb-4 bg-gray-100 rounded-lg shadow-md">
+      <span
+        className={`status w-4 h-4 rounded-full mr-4 ${
+          isOnline ? 'bg-green-500' : 'bg-red-500'
+        }`}
+      ></span>
+      <img
+        className="avatar w-12 h-12 rounded-full mr-4"
+        src={avatar}
+        alt={`${name} avatar`}
+      />
+      <p className="name text-gray-800 font-semibold">{name}</p>
     </li>
   );
 }

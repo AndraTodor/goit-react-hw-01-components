@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FriendListItem from './FriendListItem';
+import './friendList.css';
 
 function FriendList({ friends }) {
   return (
-    <ul className="friend-list">
+    <ul className="friend-list hover:bg-blue-100 w-full max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
       {friends.map(({ avatar, name, isOnline, id }) => (
         <FriendListItem
           key={id}
