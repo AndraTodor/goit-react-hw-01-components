@@ -4,21 +4,21 @@ import './statistics.css';
 
 function Statistics({ title, stats }) {
   return (
-    <section className="statistics hover:bg-blue-100 bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto">
+    <section className="bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-lg max-w-md mx-auto hover:bg-blue-100">
       {title && (
-        <h2 className="title text-xl font-bold mb-4 text-center">{title}</h2>
+        <h2 className="text-xl font-semibold text-center mb-4">{title}</h2>
       )}
-      <ul className="stat-list flex justify-around">
+      <ul className="stat-list flex justify-between">
         {stats.map(({ id, label, percentage }) => (
           <li
             key={id}
-            className="item bg-gray-100 rounded-lg shadow-md flex flex-col items-center w-24"
+            className="item bg-gray-100 dark:bg-gray-600 p-4 rounded-md text-center"
           >
-            <span className="label text-gray-700 font-semibold mb-2">
+            <span className="label block text-gray-600 dark:text-gray-300">
               {label}
             </span>
             <span
-              className="percentage text-xl font-bold text-white px-2 py-1 rounded-lg"
+              className="percentage block text-lg font-bold px-2 py-1 rounded-lg"
               style={{ backgroundColor: generateRandomColor() }}
             >
               {percentage}%
@@ -32,13 +32,13 @@ function Statistics({ title, stats }) {
 
 function generateRandomColor() {
   const colors = [
-    '#FF5733',
-    '#33FF57',
-    '#3357FF',
-    '#FF33A1',
-    '#33FFF3',
-    '#A133FF',
-    '#FF8C33',
+    '#B3D1FF',
+    '#99C2FF',
+    '#80B2FF',
+    '#66A3FF',
+    '#4D94FF',
+    '#3385FF',
+    '#1A75FF',
   ];
   return colors[Math.floor(Math.random() * colors.length)];
 }

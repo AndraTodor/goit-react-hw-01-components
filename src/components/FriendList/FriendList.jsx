@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import FriendListItem from './FriendListItem';
 import './friendList.css';
 
-function FriendList({ friends }) {
+function FriendList({ title, friends }) {
   return (
-    <ul className="friend-list hover:bg-blue-100 w-full max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+    <ul className="bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-lg max-w-md mx-auto hover:bg-blue-100">
+      {title && (
+        <h2 className="text-xl font-semibold text-center mb-4">{title}</h2>
+      )}
       {friends.map(({ avatar, name, isOnline, id }) => (
         <FriendListItem
           key={id}

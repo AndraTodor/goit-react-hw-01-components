@@ -3,34 +3,40 @@ import PropTypes from 'prop-types';
 
 function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <div className="profile hover:bg-blue-100 bg-white p-6 rounded-lg shadow-lg w-full max-w-md mx-auto">
+    <div className="bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 p-6 rounded-lg shadow-lg max-w-md mx-auto hover:bg-blue-100">
       <div className="description text-center">
         <img
           src={avatar}
           alt="User avatar"
-          className="avatar rounded-full w-32 h-32 mx-auto mb-4"
+          className="avatar rounded-full mx-auto mb-4 w-32 h-32"
         />
-        <p className="name text-xl font-bold mb-2">{username}</p>
-        <p className="tag text-gray-500">@{tag}</p>
-        <p className="location text-gray-700">{location}</p>
+        <p className="name text-xl font-semibold">{username}</p>
+        <p className="tag text-gray-600 dark:text-gray-300">@{tag}</p>
+        <p className="location text-gray-600 dark:text-gray-300">{location}</p>
       </div>
 
-      <ul className="stats flex justify-around mt-6">
+      <ul className="stats flex justify-between mt-4">
         <li className="text-center">
-          <span className="label text-gray-500">Followers</span>
-          <span className="quantity block text-xl font-bold">
+          <span className="label block text-gray-600 dark:text-gray-300">
+            Followers
+          </span>
+          <span className="quantity block text-lg font-bold">
             {stats.followers}
           </span>
         </li>
         <li className="text-center">
-          <span className="label text-gray-500">Views</span>
-          <span className="quantity block text-xl font-bold">
+          <span className="label block text-gray-600 dark:text-gray-300">
+            Views
+          </span>
+          <span className="quantity block text-lg font-bold">
             {stats.views}
           </span>
         </li>
         <li className="text-center">
-          <span className="label text-gray-500">Likes</span>
-          <span className="quantity block text-xl font-bold">
+          <span className="label block text-gray-600 dark:text-gray-300">
+            Likes
+          </span>
+          <span className="quantity block text-lg font-bold">
             {stats.likes}
           </span>
         </li>
