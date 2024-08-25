@@ -8,11 +8,11 @@ function Statistics({ title, stats }) {
       {title && (
         <h2 className="text-xl font-semibold text-center mb-4">{title}</h2>
       )}
-      <ul className="stat-list flex justify-between">
+      <ul className="stat-list flex flex-wrap justify-around">
         {stats.map(({ id, label, percentage }) => (
           <li
             key={id}
-            className="item bg-gray-100 dark:bg-gray-600 p-4 rounded-md text-center"
+            className="item bg-gray-100 dark:bg-gray-600 rounded-md text-center"
           >
             <span className="label block text-gray-600 dark:text-gray-300">
               {label}

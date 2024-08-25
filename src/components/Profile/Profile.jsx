@@ -15,7 +15,7 @@ function Profile({ username, tag, location, avatar, stats }) {
         <p className="location text-gray-600 dark:text-gray-300">{location}</p>
       </div>
 
-      <ul className="stats flex justify-between mt-4">
+      <ul className="stats flex justify-around mt-4">
         <li className="text-center">
           <span className="label block text-gray-600 dark:text-gray-300">
             Followers
