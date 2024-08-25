@@ -3,27 +3,24 @@ import PropTypes from 'prop-types';
 
 function TransactionHistory({ items }) {
   return (
-    <div className="hover:bg-blue-100 w-full max-w-4xl mx-auto p-6">
-      <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
-        <thead className="bg-gray-100 text-gray-600">
-          <tr>
-            <th className="py-3 px-6 text-center">Type</th>
-            <th className="py-3 px-6 text-center">Amount</th>
-            <th className="py-3 px-6 text-center">Currency</th>
+    <div className="transaction-history-container w-full max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <h2 className="text-center text-xl font-bold text-gray-800 mb-4">
+        Transaction History
+      </h2>
+      <table className="text-center transaction-history w-full">
+        <thead>
+          <tr className="bg-blue-200">
+            <th className="text-center p-2 text-left">Type</th>
+            <th className="text-center p-2 text-left">Amount</th>
+            <th className="text-center p-2 text-left">Currency</th>
           </tr>
         </thead>
         <tbody>
           {items.map(({ id, type, amount, currency }) => (
-            <tr key={id} className="hover:bg-gray-100">
-              <td className="py-3 px-6 border-t border-gray-200 text-center">
-                {type}
-              </td>
-              <td className="py-3 px-6 border-t border-gray-200 text-center">
-                {amount}
-              </td>
-              <td className="py-3 px-6 border-t border-gray-200 text-center">
-                {currency}
-              </td>
+            <tr key={id} className="hover:bg-blue-100">
+              <td className="p-2">{type}</td>
+              <td className="p-2">{amount}</td>
+              <td className="p-2">{currency}</td>
             </tr>
           ))}
         </tbody>
